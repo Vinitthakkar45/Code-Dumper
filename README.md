@@ -70,8 +70,6 @@ This is a simple blog application built with Node.js, Express.js, and EJS. It al
 
 ## File Structure
 
-## File Structure
-
 blog-application/
     controllers/
         homeController.js
