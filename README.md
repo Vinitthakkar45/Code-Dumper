@@ -70,35 +70,37 @@ This is a simple blog application built with Node.js, Express.js, and EJS. It al
 
 ## File Structure
 
+## File Structure
+
 blog-application/
-├── controllers/
-│ ├── homeController.js
-│ ├── aboutController.js
-│ ├── contactController.js
-│ ├── createPostController.js
-│ └── newPostController.js
-├── public/
-│ ├── css/
-│ │ └── styles.css
-│ └── js/
-│ └── script.js
-├── routes/
-│ └── web.js
-├── views/
-│ ├── partials/
-│ │ ├── header.ejs
-│ │ └── footer.ejs
-│ ├── posts/
-│ │ └── (generated post files)
-│ ├── about.ejs
-│ ├── contact.ejs
-│ ├── createPost.ejs
-│ ├── index.ejs
-│ └── newPost.ejs
-├── .gitignore
-├── package.json
-├── README.md
-└── server.js
+    controllers/
+        homeController.js
+        aboutController.js
+        contactController.js
+        createPostController.js
+        newPostController.js
+    public/
+        css/
+            styles.css
+        js/
+            script.js
+    routes/
+        web.js
+    views/
+        partials/
+            header.ejs
+            footer.ejs
+        posts/
+            (generated post files)
+        about.ejs
+        contact.ejs
+        createPost.ejs
+        index.ejs
+        newPost.ejs
+    .gitignore
+    package.json
+    README.md
+    server.js
 
 
 ## Contributing
