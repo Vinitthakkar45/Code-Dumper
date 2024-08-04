@@ -1,0 +1,47 @@
+<%- include('../partials/header',{ title: title }) %>
+
+<div class="home-background text-white">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Welcome to Our Blog</h1>
+        <p>Explore our latest articles and updates.</p>
+    </div>
+</div>
+
+<section id="blog-titles" class="container mt-5">
+    <h2 class="text-center mb-4">Latest Blog Posts</h2>
+    <ul class="list-group">
+        <% for (let index = 0; index < blogPosts.length; index++) { %>
+            <li class="list-group-item">
+                <h2>
+                    <a href="<%='./posts/' + blogPosts[index].title.replace(/\s/g, "-") + blogPosts[index].id + '.ejs' %>"><%= blogPosts[index].title %></a>
+                </h2>
+                
+                <button onclick="toggleUpdateForm('<%= blogPosts[index].id %>')" class="btn btn-warning btn-sm">Update</button>
+                <div id="updateForm_<%= blogPosts[index].id %>" style="display:none;" class="mt-2">
+                    <form action="/updatePost" method="POST">
+                        <input type="hidden" name="postId" value="<%= blogPosts[index].id %>">
+                        <input type="hidden" name="postTitle" value="<%= blogPosts[index].title.replace(/\s/g, "-") %>">
+                        <div class="mb-3">
+                            <label for="newTitle_<%= blogPosts[index].id %>" class="form-label">New Title:</label>
+                            <input type="text" id="newTitle_<%= blogPosts[index].id %>" name="newTitle" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newDescription_<%= blogPosts[index].id %>" class="form-label">New Description:</label>
+                            <textarea id="newDescription_<%= blogPosts[index].id %>" name="newDescription" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+
+                <form action="/deletePost" method="POST" class="d-inline-block">
+                    <input type="hidden" name="postId" value="<%= blogPosts[index].id %>">
+                    <input type="hidden" name="postTitle" value="<%= blogPosts[index].title.replace(/\s/g, "-") %>">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+</section>
+
+<%- include('../partials/footer') %>
