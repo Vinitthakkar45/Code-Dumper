@@ -88,9 +88,9 @@ const updateController = (req, res) => {
         const newFilePath = path.join(__dirname, '../views/posts', `${newPostSlug + postId}.ejs`);
 
         const updatedContent = `
-            <%- include('../partials/header', { title: "${title}" }) %>
-            <h1 class="new-post-title">${title}</h1>
-            <p class="new-post-desc">${description}</p>
+            <%- include('../partials/header', { title: "${newTitle}" }) %>
+            <h1 class="new-post-title">${newTitle}</h1>
+            <p class="new-post-desc">${newDescription}</p>
             <%- include('../partials/footer') %>
         `;
 
