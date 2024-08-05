@@ -18,7 +18,7 @@
                 </h2>
                 
                 <button onclick="toggleUpdateForm('<%= blogPosts[index].id %>')" class="btn btn-warning btn-sm">Update</button>
-                <div id="updateForm_<%= blogPosts[index].id %>" style="display:none;" class="mt-2">
+                <div class="mb-2" id="updateForm_<%= blogPosts[index].id %>" style="display:none;" class="mt-2">
                     <form action="/updatePost" method="POST">
                         <input type="hidden" name="postId" value="<%= blogPosts[index].id %>">
                         <input type="hidden" name="postTitle" value="<%= blogPosts[index].title.replace(/\s/g, "-") %>">

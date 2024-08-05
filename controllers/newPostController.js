@@ -11,7 +11,8 @@ let blogPosts = [];
 
 const newPostController = (req, res) => {
     id++;
-    const { title, description } = req.body;
+    let { title, description } = req.body;
+    title = title.trim();
     const slug = slugify(title, { lower: true });
     const newPostPath = path.join(__dirname, '../views/posts', `${slug + id}.ejs`);
 
@@ -70,9 +71,10 @@ const deleteController = (req, res) => {
 const updateController = (req, res) => {
     const postId = parseInt(req.body.postId, 10);
     const postTitle = req.body.postTitle;
-    const { newTitle, newDescription } = req.body;
+    let { newTitle, newDescription } = req.body;
+    newTitle = newTitle.trim();
 
-    if (typeof newTitle !== 'string' || newTitle.trim() === '') {
+    if (typeof newTitle !== 'string' || newTitle=== '') {
         return res.status(400).send('Invalid title');
     }
 
