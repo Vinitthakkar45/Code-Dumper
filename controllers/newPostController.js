@@ -55,9 +55,32 @@ const deleteController = async (req, res) => {
         const password  = req.body.password;
 
         if (password !== FIXED_PASSWORD) {
-            return res.status(403).send('Forbidden: Invalid password');
+            res.send(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Form Submitted</title>
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                </head>
+                <body>
+                    <div class="container mt-5">
+                        <div class="alert alert-danger text-center" role="alert">
+                            Forbidden : Invalid Password
+                        </div>
+                    </div>
+                    <script>
+                        setTimeout(() => {
+                            window.location.href = '/';
+                        }, 1000); 
+                    </script>
+                </body>
+                </html>
+            `);
+            return;
         }
-        
+
         console.log(`Received postId: ${req.body.postId}, parsed postId: ${postId}, postTitle: ${postTitle}`);
 
         const post = blogPosts.find(post => post.id === postId);
