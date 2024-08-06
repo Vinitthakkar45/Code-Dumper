@@ -11,6 +11,7 @@ const __dirname = path.dirname(__filename);
 
 let id = 0;
 let blogPosts = [];
+const FIXED_PASSWORD = 'bob';
 
 const newPostController = async (req, res) => {
     try {
@@ -51,7 +52,12 @@ const deleteController = async (req, res) => {
     try {
         const postId = parseInt(req.body.postId, 10);
         const postTitle = req.body.postTitle;
+        const password  = req.body.password;
 
+        if (password !== FIXED_PASSWORD) {
+            return res.status(403).send('Forbidden: Invalid password');
+        }
+        
         console.log(`Received postId: ${req.body.postId}, parsed postId: ${postId}, postTitle: ${postTitle}`);
 
         const post = blogPosts.find(post => post.id === postId);

@@ -8,6 +8,10 @@
         const form = document.getElementById(`updateForm_${postId}`);
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
     }
+    function toggleDeleteForm(postId) {
+        const form = document.getElementById(`deleteForm_${postId}`);
+        form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
+    }
 </script>
 
 </body>

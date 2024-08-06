@@ -30,15 +30,22 @@
                             <label for="newDescription_<%= blogPosts[index].id %>" class="form-label">New Description:</label>
                             <textarea id="newDescription_<%= blogPosts[index].id %>" name="newDescription" class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Confirm Update</button>
                     </form>
                 </div>
 
-                <form action="/deletePost" method="POST" class="d-inline-block">
-                    <input type="hidden" name="postId" value="<%= blogPosts[index].id %>">
-                    <input type="hidden" name="postTitle" value="<%= blogPosts[index].title.replace(/\s/g, "-") %>">
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                </form>
+                <button onclick="toggleDeleteForm('<%= blogPosts[index].id %>')" class="btn btn-danger btn-sm">Delete</button>
+                <div class="mb-2" id="deleteForm_<%= blogPosts[index].id %>" style="display:none;" class="mt-2">
+                    <form action="/deletePost" method="POST">
+                        <input type="hidden" name="postId" value="<%= blogPosts[index].id %>">
+                        <input type="hidden" name="postTitle" value="<%= blogPosts[index].title.replace(/\s/g, "-") %>">
+                        <div class="mb-3">
+                            <label for="deletePassword_<%= blogPosts[index].id %>" class="form-label">Password:</label>
+                            <input type="password" id="deletePassword_<%= blogPosts[index].id %>" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                    </form>
+                </div>
             </li>
         <% } %>
     </ul>
