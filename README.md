@@ -1,13 +1,13 @@
-# Blog Application
+# Code Dumper
 
 This is a simple blog application built with Node.js, Express.js, and EJS. It allows users to create, update, and delete blog posts. The application uses the file system to store the blog post content.
 
 ## Features
 
-- Create new blog posts
-- Update existing blog posts
-- Delete blog posts
-- View individual blog posts
+- Create new posts
+- Update existing posts
+- Delete posts
+- View individual posts
 
 ## Technologies Used
 
