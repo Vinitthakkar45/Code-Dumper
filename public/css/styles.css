@@ -4,18 +4,22 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333333;
 }
 
 .navbar {
-    /* position: fixed; */
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
 }
 
-.bg-custom {
-    background-color: #202224;
+.navbar-brand, .nav-link {
+    color: #020218 !important;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    color: #3498db !important;
 }
 
 .logo {
@@ -25,18 +29,15 @@ body {
     height: 40px; 
     margin-right: 10px;
 }
+
 .home-background {
     position: relative;
     width: 100%;
-    height: 60vh;
-    background-image: url('/images/bg.png'); 
-    background-size: contain;
+    height: 45vh;
+    background-image: url('/images/bgg.png'); 
+    background-size: cover ;
     background-repeat: no-repeat;
-    background-position: right center;
-    display: flex;
-    justify-content: flex-start;;
-    align-items: center;
-    padding-left: 20px;
+    background-position: center;
 }
 
 .home-background .overlay {
@@ -45,25 +46,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 1;
-}
-
-.home-background .content {
-    position: relative;
-    z-index: 2;
-    padding: 20px; 
-    max-width: 50%; 
-    text-align: left;
-}
-
-.home-background h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-.home-background p {
-    font-size: 24px;
 }
 
 #blog-titles {
@@ -71,7 +55,8 @@ body {
 }
 
 #blog-titles .list-group-item {
-    font-size: 20px;
+    font-size: 1.2rem;
+    border: 0.5px solid #9eb2c7;
 }
 
 
@@ -120,10 +105,6 @@ p {
 a {
     text-decoration: none; 
     color: #0033CC;; 
-}
-
-a:hover {
-    text-decoration: underline; 
 }
 
 /* Contact me */
