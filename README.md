@@ -72,9 +72,6 @@ This is a CRUD application built with Node.js, Express.js, and EJS. It allows us
 
 If you want to contribute to this project, feel free to fork the repository and submit a pull request. Please make sure to follow the code style and include appropriate tests.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
